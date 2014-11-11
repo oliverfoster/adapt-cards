@@ -1,0 +1,38 @@
+<div class="component-inner cards-inner">
+    {{> component this}}
+
+    <div class="component-widget cards-widget">
+
+    	<div class="cards-container-desktop {{#if _desktopConfig._debugOutline}}debug-outline{{/if}}" style="width:{{_desktopConfig._size._width}}px; height:{{_desktopConfig._size._height}}px;">
+
+	    	<a href="#" class="cards-trigger" style="width:{{_desktopConfig._trigger._size._width}}px; height:{{_desktopConfig._trigger._size._height}}px; left:{{_desktopConfig._trigger._position._left}}px; top:{{_desktopConfig._trigger._position._top}}px; background-image:url({{_desktopConfig._trigger._image}})"></a>
+
+	    	<div class="cards">
+	    		{{#each _cards}}
+	    			<div class="card" style="width:{{../_desktopConfig._card._size._width}}px; height:{{../_desktopConfig._card._size._height}}px; left:{{../_desktopConfig._card._position._left}}px; top:{{../_desktopConfig._card._position._top}}px; background-image:url({{_image}})">
+	    				<div class="card-inner">
+
+	    					{{#if title}}
+	    					<div class="card-title">
+			                    <h5 class="card-title-inner">
+			                    {{{title}}}
+			                    </h5>
+			                </div>
+			                {{/if}}
+
+			                {{#if body}}
+			                <div class="card-body">
+			                    <div class="card-body-inner">{{{body}}}</div>
+			                </div>
+			                {{/if}}
+
+	    				</div>
+	    			</div>
+	    		{{/each}}
+	    	</div>
+
+    	</div>
+
+    </div>
+    
+</div>
