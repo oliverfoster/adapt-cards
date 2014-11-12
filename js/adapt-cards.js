@@ -10,6 +10,9 @@ define(function(require) {
 
     	preRender: function() {
     		this.checkLayout();
+    		if (this.model.get("_desktopLayout")) {
+        		this.index = 0;
+        	}
     		this.listenTo(Adapt, "device:resize", this.handleDeviceResize);
     	},
 
@@ -43,7 +46,6 @@ define(function(require) {
         		this.setupCardPositions();
         	}
             this.setReadyStatus();
-            this.index = 0;
         },
 
         setupCardPositions: function() {
@@ -64,7 +66,7 @@ define(function(require) {
         		});
         		
         	}, this));
-        	this.selectCardWithIndex(0);
+        	this.selectCardWithIndex(this.index);
         },
 
         setInitalCardPositionWithIndex: function(index) {
