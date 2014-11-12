@@ -140,6 +140,14 @@ define(function(require) {
     		}, {
     			duration: 700
     		});
+
+    		this.updateProgressIndicatorWithIndex(index);
+        },
+
+        updateProgressIndicatorWithIndex: function(index) {
+        	var indicator = this.$(".cards-progress-indicator")[index];
+        	this.$(".cards-progress-indicator").removeClass("selected");
+        	$(indicator).addClass("selected");
         }
 
     });
