@@ -8,21 +8,42 @@ define(function(require) {
     		"click .cards-trigger": "onTriggerPressed"
     	},
 
-        postRender: function() {
-            this.setReadyStatus();
-            this.checkLayout();
-            this.index = 0;
-        },
+    	preRender: function() {
+    		this.checkLayout();
+    		this.listenTo(Adapt, "device:resize", this.handleDeviceResize);
+    	},
 
-        checkLayout: function() {
-        	if (this.$el.width() >= this.model.get("_desktopConfig")._size._width) {
+    	checkLayout: function() {
+        	if ($(window).width() > this.model.get("_desktopConfig")._size._width) {
         		this.desktopLayout();
         	} else {
+        		this.mobileLayout();
         	}
         },
 
         desktopLayout: function() {
-        	this.setupCardPositions();
+        	this.model.set({
+        		_desktopLayout: true
+        	});
+        },
+
+        mobileLayout: function() {
+        	this.model.set({
+        		_desktopLayout: false
+        	});
+        },
+
+        handleDeviceResize: function() {
+        	this.checkLayout();
+        	this.render();
+        },
+
+        postRender: function() {
+        	if (this.model.get("_desktopLayout")) {
+        		this.setupCardPositions();
+        	}
+            this.setReadyStatus();
+            this.index = 0;
         },
 
         setupCardPositions: function() {
@@ -54,7 +75,7 @@ define(function(require) {
         	};
         	var card = this.$(".card")[index];
         	var cardInner = $(card).children(".card-inner");
-        	
+
         	$(card).velocity({
     			left: cardData._initialPosition._left + "px",
     			top: cardData._initialPosition._top + "px",

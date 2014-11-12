@@ -38,6 +38,9 @@
                 }
             }
         },
+        "_mobileConfig": {
+            "_minimumCardHeight": 250
+        },
         "_cards": [
             {
                 "title": "title",
