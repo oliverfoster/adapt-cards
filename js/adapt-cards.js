@@ -48,11 +48,13 @@ define(function(require) {
 
         setInitalCardPositionWithIndex: function(index) {
         	var cardData = this.model.get("_cards")[index];
-        	var card = this.$(".card")[index];
         	var selectedPosition = {
         		left: this.model.get("_desktopConfig")._card._position._left,
         		top: this.model.get("_desktopConfig")._card._position._top
         	};
+        	var card = this.$(".card")[index];
+        	var cardInner = $(card).children(".card-inner");
+        	
         	$(card).velocity({
     			left: cardData._initialPosition._left + "px",
     			top: cardData._initialPosition._top + "px",
@@ -64,6 +66,13 @@ define(function(require) {
     		}, {
     			duration: 1400,
     			easing: [450, 50]
+    		});
+    		$(card).removeClass("card-selected");
+
+    		$(cardInner).velocity({
+    			opacity: 0
+    		}, {
+    			duration: 700
     		});
         },
 
@@ -84,11 +93,13 @@ define(function(require) {
 
         selectCardWithIndex: function(index) {
         	var cardData = this.model.get("_cards")[index];
-        	var card = this.$(".card")[index];
         	var selectedPosition = {
         		left: this.model.get("_desktopConfig")._card._position._left,
         		top: this.model.get("_desktopConfig")._card._position._top
         	};
+        	var card = this.$(".card")[index];
+        	var cardInner = $(card).children(".card-inner");
+
         	$(card).velocity({
     			left: selectedPosition.left + "px",
     			top: selectedPosition.top + "px",
@@ -100,6 +111,13 @@ define(function(require) {
     		}, {
     			duration: 1500,
     			easing: [450, 30]
+    		});
+    		$(card).addClass("card-selected");
+
+    		$(cardInner).velocity({
+    			opacity: 1
+    		}, {
+    			duration: 700
     		});
         }
 

@@ -6,6 +6,7 @@
 	.cards-container-desktop {
 		margin: auto;
 		position: relative;
+		background-color: @primary-color;
 
 		&.debug-outline {
 			background-color: rgba(255, 0, 0, 0.15);
@@ -14,6 +15,7 @@
 
 		.cards-trigger {
 			position: absolute;
+			z-index: 2;
 		}
 
 		.card {
@@ -23,10 +25,16 @@
 			border-radius: 10px;
 			background-repeat: no-repeat;
 			background-position: center;
+			z-index: 0;
+
+			&.card-selected {
+				z-index: 1;
+			}
 		}
 
 		.card-inner {
 			padding: 10px;
+			opacity: 0;
 		}
 
 	}

@@ -1,12 +1,119 @@
-{
-    "_id":"c-05",
-    "_parentId":"b-05",
-    "_type":"component",
-    "_component":"cards",
-    "_classes":"",
-    "_layout":"left",
-    "title":"Our first look at a component",
-    "displayTitle":"Our first look at a component",
-    "body":"",
-    "instruction":""
-}
+[   
+    {
+        "_id":"c-05",
+        "_parentId":"b-05",
+        "_type":"component",
+        "_component":"cards",
+        "_classes":"",
+        "_layout":"full",
+        "title":"cards",
+        "displayTitle":"cards",
+        "body":"",
+        "instruction":"",
+        "_desktopConfig": {
+            "_debugOutline": false,
+            "_size": {
+                "_width": 900,
+                "_height": 500
+            },
+            "_trigger": {
+                "_image": "course/en/images/trigger.png",
+                "_size": {
+                    "_width": 103,
+                    "_height": 103
+                },
+                "_position": {
+                    "_left": 600,
+                    "_top": 200
+                }
+            },
+            "_card": {
+                "_size": {
+                    "_width": 290,
+                    "_height": 200
+                },
+                "_position": {
+                    "_left": 50,
+                    "_top": 160
+                }
+            }
+        },
+        "_cards": [
+            {
+                "title": "title",
+                "body":"Card Body. Some body text goes here.",
+                "_image": "course/en/images/card_one.png",
+                "_initialPosition": {
+                    "_left": 320,
+                    "_top": 210,
+                    "scale": 0.4,
+                    "rotate": {
+                        "x": 50,
+                        "y": 0,
+                        "z": 20
+                    }
+                }
+            },
+            {
+                "title": "title",
+                "body":"Card Body. Some body text goes here.",
+                "_image": "course/en/images/card_two.png",
+                "_initialPosition": {
+                    "_left": 470,
+                    "_top": 330,
+                    "scale": 0.3,
+                    "rotate": {
+                        "x": 10,
+                        "y": 0,
+                        "z": 30
+                    }
+                }
+            },
+            {
+                "title": "title",
+                "body":"Card Body. Some body text goes here.",
+                "_image": "course/en/images/card_three.png",
+                "_initialPosition": {
+                    "_left": 350,
+                    "_top": 60,
+                    "scale": 0.4,
+                    "rotate": {
+                        "x": 30,
+                        "y": 0,
+                        "z": -20
+                    }
+                }
+            },
+            {
+                "title": "title",
+                "body":"Card Body. Some body text goes here.",
+                "_image": "course/en/images/card_four.png",
+                "_initialPosition": {
+                    "_left": 630,
+                    "_top": 230,
+                    "scale": 0.3,
+                    "rotate": {
+                        "x": 20,
+                        "y": 0,
+                        "z": -15
+                    }
+                }
+            },
+            {
+                "title": "title",
+                "body":"Card Body. Some body text goes here.",
+                "_image": "course/en/images/card_five.png",
+                "_initialPosition": {
+                    "_left": 500,
+                    "_top": 0,
+                    "scale": 0.4,
+                    "rotate": {
+                        "x": 10,
+                        "y": 0,
+                        "z": 5
+                    }
+                }
+            }
+        ]
+    }
+]
