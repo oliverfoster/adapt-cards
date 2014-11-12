@@ -12,6 +12,7 @@
         "instruction":"",
         "_desktopConfig": {
             "_debugOutline": false,
+            "_backgroundImage": "course/en/images/narrative.png",
             "_size": {
                 "_width": 900,
                 "_height": 500
@@ -39,7 +40,7 @@
             }
         },
         "_mobileConfig": {
-            "_minimumCardHeight": 250
+            "_minimumCardHeight": 200
         },
         "_cards": [
             {

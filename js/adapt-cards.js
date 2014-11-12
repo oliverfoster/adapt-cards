@@ -52,15 +52,17 @@ define(function(require) {
         	var $card = this.$(".card");
         	var cards = this.model.get("_cards");
         	$card.each(_.bind(function(index, item) {
-        		var card = cards[index];
+
+        		var cardData = cards[index];
+        		
         		$(item).velocity({
-        			left: card._initialPosition._left + "px",
-        			top: card._initialPosition._top + "px",
-        			scaleX: card._initialPosition.scale,
-        			scaleY: card._initialPosition.scale,
-        			rotateX: card._initialPosition.rotate.x + "deg",
-        			rotateY: card._initialPosition.rotate.y + "deg",
-        			rotateZ: card._initialPosition.rotate.z + "deg"
+        			left: cardData._initialPosition._left + "px",
+        			top: cardData._initialPosition._top + "px",
+        			scaleX: cardData._initialPosition.scale,
+        			scaleY: cardData._initialPosition.scale,
+        			rotateX: cardData._initialPosition.rotate.x + "deg",
+        			rotateY: cardData._initialPosition.rotate.y + "deg",
+        			rotateZ: cardData._initialPosition.rotate.z + "deg"
         		}, {
         			duration: 0
         		});
@@ -71,10 +73,6 @@ define(function(require) {
 
         setInitalCardPositionWithIndex: function(index) {
         	var cardData = this.model.get("_cards")[index];
-        	var selectedPosition = {
-        		left: this.model.get("_desktopConfig")._card._position._left,
-        		top: this.model.get("_desktopConfig")._card._position._top
-        	};
         	var card = this.$(".card")[index];
         	var cardInner = $(card).children(".card-inner");
 
